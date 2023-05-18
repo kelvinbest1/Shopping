@@ -80,5 +80,14 @@ createProduct = catchAsyncError(async (req, res, next) => {
       message: "Product deleted successfully",
     });
   });
+
+  module.exports = {
+    createProduct,
+    getAllProducts,
+    getAdminProducts,
+    getProductDeatils,
+    updateProduct,
+    deleteProduct
+}
   
   
