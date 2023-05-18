@@ -37,4 +37,17 @@ createProduct = catchAsyncError(async (req, res, next) => {
       products,
     });
   });
+
+  getProductDeatils = catchAsyncError(async (req, res, next) => {
+    let product = await Product.findById(req.params.id);
+    if (!product) {
+      return next(new ErrorHander("Product not found", 404));
+    }
+  
+    res.status(200).json({
+      success: true,
+      product,
+    });
+  });
+  
   
